@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
             userOutput.setText("Hello, "+message+"!");
         }
     }
-
     public void actionBTN(View v){
         message = userInput.getText().toString();
         userOutput.setText("Hello, "+message+"!");
