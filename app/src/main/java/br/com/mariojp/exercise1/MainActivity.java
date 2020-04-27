@@ -9,7 +9,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     public static final String INPUT = "INPUT";
     private TextView userInput, userOutput;
-    private String message;
+    private String labelMensagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,18 +18,18 @@ public class MainActivity extends AppCompatActivity {
         userInput = findViewById(R.id.editNome);
         userOutput = findViewById(R.id.labelMensagem);
         if (savedInstanceState != null){
-            message = savedInstanceState.getString(INPUT);
-            userOutput.setText("Hello, "+message+"!");
+            labelMensagem = savedInstanceState.getString(INPUT);
+            userOutput.setText("Alô, "+labelMensagem+"!");
         }
     }
     public void actionBTN(View v){
-        message = userInput.getText().toString();
-        userOutput.setText("Hello, "+message+"!");
+        labelMensagem = userInput.getText().toString();
+        userOutput.setText("Alô, "+labelMensagem+"!");
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putString(INPUT, message);
+        outState.putString(INPUT, labelMensagem);
         super.onSaveInstanceState(outState);
     }
 }
